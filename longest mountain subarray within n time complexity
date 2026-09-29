@@ -1,4 +1,4 @@
-Problem: Longest Mountain Subarray
+Problem: Longest Mountain Subarray with n time complexity
 arr = {1, 3, 1}  output: 3 // the longest subarray maintained mountaind shape is 1 3 1. which size is 3
 arr = [2, 2, 2]  output: 0
 arr = [1, 3, 1, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5] output: 11  [1, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5] 
@@ -104,26 +104,7 @@ int i = 0, j = -1, k = -1, p = 0, d = 0, n = 0;
         }
     }
     return d;
-
-
-way -5: time(n^2)  space(1)
-    for (int i = 0; i < n; i++){
-        int j = i + 1;
-        int inc = 0, dec = 0; 
-        while (j < n && a[j] > a[j - 1]){
-            inc = 1;
-            j++;
-        } 
-        while (j < n && a[j] < a[j - 1]){
-            dec = 1;
-            j++;
-        } 
-        if (inc && dec){
-            ans = max(j - i, ans);
-            inc = 0, dec = 0;
-        }
-    }  
-    return ans;
+ 
 
 
 Which approach did you liked. its better to solve with the lowest time complexity n 
